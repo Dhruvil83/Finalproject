@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#ff0066"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Verify Mobile"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview1"
+                android:layout_marginTop="20dp"
+                android:text="please enter your mobile Number"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="25sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageview1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_mobile" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittext1"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="10"
+            />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Next"
+        android:id="@+id/buttonN"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/edittext1"
+        android:background="@drawable/ovel"
+        android:layout_marginTop="40dp"
+        />
+
+
+</LinearLayout>

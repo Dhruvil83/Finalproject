@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "12264190757",
+    "firebase_url": "https://spititout2-ec1e8.firebaseio.com",
+    "project_id": "spititout2-ec1e8",
+    "storage_bucket": "spititout2-ec1e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12264190757:android:b3326703aa885d17",
+        "android_client_info": {
+          "package_name": "com.example.dhruvil.spit_it_out"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12264190757-dh9ggjetiluc9r36ghhjkto8n31tt6qu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dhruvil.spit_it_out",
+            "certificate_hash": "9cd3a6945e3c1e06b77a6bb804783aa77a99a686"
+          }
+        },
+        {
+          "client_id": "12264190757-vp0r9de2fdkfmoel7rp3reds7kmth8br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACrFXIOVLC3E5Spqxu_ERlMHa8-zcH1Vg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12264190757-vp0r9de2fdkfmoel7rp3reds7kmth8br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

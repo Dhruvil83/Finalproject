@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#ff0066"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/back"
+                android:src="@drawable/ic_search_back"
+                android:tint="@android:color/white"
+                />
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:text="Verify Mobile"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageview1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_mobile" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Mobile Number is:"
+        android:textSize="20sp"
+        android:id="@+id/mobilenum"
+         android:textColor="#f44441"
+        android:layout_marginTop="20sp"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        >
+
+        <EditText
+            android:textSize="24sp"
+            android:id="@+id/otp1"
+            android:inputType="number"
+            android:layout_width="0dp"
+            android:maxLength="1"
+            android:nextFocusLeft="@id/otp2"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:textSize="24sp"
+            android:inputType="number"
+            android:nextFocusLeft="@id/otp3"
+            android:maxLength="1"
+            android:id="@+id/otp2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:textSize="24sp"
+            android:inputType="number"
+            android:nextFocusLeft="@id/otp4"
+            android:maxLength="1"
+            android:id="@+id/otp3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:textSize="24sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:id="@+id/otp4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:autofillHints="" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Next"
+        android:background="@drawable/ovel"
+        android:id="@+id/next1"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/edittext1"
+        android:layout_marginTop="40dp"
+        tools:ignore="InvalidId" />
+</LinearLayout>
