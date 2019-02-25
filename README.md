@@ -1,2 +1,0 @@
-# spititout
-Social Network App
