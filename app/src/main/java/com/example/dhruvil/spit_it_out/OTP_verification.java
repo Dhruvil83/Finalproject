@@ -44,7 +44,7 @@ public class OTP_verification extends AppCompatActivity {
             @Override
             public void onClick(android.view.View v) {
 
-                Intent intent=new Intent(OTP_verification.this, LoginActivity.class);
+                Intent intent=new Intent(OTP_verification.this, Successfully_register.class);
                 startActivity(intent);
 
 

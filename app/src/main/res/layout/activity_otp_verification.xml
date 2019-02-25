@@ -11,8 +11,6 @@
         android:layout_height="240dp">
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -20,19 +18,18 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
                 android:id="@+id/back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/ic_search_back"
-                android:tint="@android:color/white"
-                />
+                android:tint="@android:color/white" />
 
             <TextView
                 android:id="@+id/textview1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:text="Verify Mobile"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
@@ -52,11 +49,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your Mobile Number is:"
-        android:textSize="20sp"
+        android:text="OTP has been sent to your mobile phone:"
+        android:textSize="25sp"
         android:id="@+id/mobilenum"
-         android:textColor="#f44441"
         android:layout_marginTop="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Your OTP Code:"
+        android:textSize="25sp"
+        />
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
