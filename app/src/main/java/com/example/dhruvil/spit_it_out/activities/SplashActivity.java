@@ -1,4 +1,4 @@
-package com.example.dhruvil.spit_it_out;
+package com.example.dhruvil.spit_it_out.activities;
 
         import android.Manifest;
         import android.content.Intent;
@@ -7,6 +7,8 @@ package com.example.dhruvil.spit_it_out;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.widget.Toast;
+
+        import com.example.dhruvil.spit_it_out.R;
 
         import net.alhazmy13.gota.Gota;
         import net.alhazmy13.gota.GotaResponse;
@@ -21,7 +23,7 @@ public class SplashActivity extends AppCompatActivity implements Gota.OnRequestP
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
+                Intent intent=new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

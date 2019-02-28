@@ -1,4 +1,4 @@
-package com.example.dhruvil.spit_it_out;
+package com.example.dhruvil.spit_it_out.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dhruvil.spit_it_out.Models.Datamodel;
+import com.example.dhruvil.spit_it_out.R;
+import com.example.dhruvil.spit_it_out.adapter.Myadapter;
 
 import java.util.ArrayList;
 
@@ -30,7 +32,7 @@ public class menu1 extends Fragment {
     };
     View view;
     Context context;
-    ArrayList<Datamodel> android_verion ;
+    ArrayList<Datamodel> android_version ;
     Myadapter adapter;
 
 
@@ -39,8 +41,8 @@ public class menu1 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment1, container, false);
         context = getActivity();
-        getActivity().setTitle("Timeline");
-        android_verion = new ArrayList<>();
+        getActivity().setTitle("PUBLIC");
+        android_version = new ArrayList<>();
         initViews();
         return view;
 
@@ -51,7 +53,7 @@ public class menu1 extends Fragment {
     public void initViews() {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        adapter = new Myadapter(context, android_verion);
+        adapter = new Myadapter(context, android_version);
         recyclerView.setAdapter(adapter);
 
         prepareData();
@@ -62,7 +64,7 @@ public class menu1 extends Fragment {
 
             for (int i = 0; i < android_image_urls.length; i++) {
             Datamodel androidversion = new Datamodel("image", android_image_urls[i]);
-            android_verion.add(androidversion);
+                android_version.add(androidversion);
         }
 
         adapter.notifyDataSetChanged();

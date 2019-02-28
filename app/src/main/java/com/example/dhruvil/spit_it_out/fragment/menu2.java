@@ -1,4 +1,4 @@
-package com.example.dhruvil.spit_it_out;
+package com.example.dhruvil.spit_it_out.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,18 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class menu3 extends Fragment {
+import com.example.dhruvil.spit_it_out.R;
+
+public class menu2 extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return  inflater.inflate(R.layout.fragment3,container,false);
+        return  inflater.inflate(R.layout.fragment2,container,false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("Hello");
+        getActivity().setTitle("Timeline");
     }
 
 }

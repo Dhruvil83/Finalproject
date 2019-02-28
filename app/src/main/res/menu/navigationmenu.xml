@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
     <item
         android:id="@+id/timeline"
-        android:title=
-            "@string/timeline"
+        android:title="@string/Public"
         />
     <item
         android:id="@+id/publict"
-        android:title="@string/public_timeline"
+        android:title="@string/timeline"
         />
     <item
         android:id="@+id/viedo"
-        android:title="@string/video"
+        android:title="@string/contact"
         />
 
     <item
         android:id="@+id/logout"
-        android:title="Logout"
+        android:title="@string/setting"
         />
-
+    </group>
 
 </menu>

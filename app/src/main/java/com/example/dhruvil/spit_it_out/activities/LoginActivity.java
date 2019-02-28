@@ -1,17 +1,15 @@
-package com.example.dhruvil.spit_it_out;
+package com.example.dhruvil.spit_it_out.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dhruvil.spit_it_out.Models.PhoneNumberModel;
+import com.example.dhruvil.spit_it_out.R;
 
 public class LoginActivity extends AppCompatActivity {
     Button button;

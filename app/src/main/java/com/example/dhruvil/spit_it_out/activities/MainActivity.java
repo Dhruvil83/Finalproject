@@ -1,7 +1,6 @@
-package com.example.dhruvil.spit_it_out;
+package com.example.dhruvil.spit_it_out.activities;
 
 import  android.content.Intent;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -12,17 +11,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.dhruvil.spit_it_out.R;
+import com.example.dhruvil.spit_it_out.fragment.menu1;
+import com.example.dhruvil.spit_it_out.fragment.menu2;
+import com.example.dhruvil.spit_it_out.fragment.menu3;
+import com.example.dhruvil.spit_it_out.fragment.menu4;
 
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener, NavigationView.OnNavigationItemSelectedListener{
@@ -113,13 +113,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         switch (menuItem.getItemId()){
             case R.id.audio:
-                Intent intent=new Intent(MainActivity.this,audio.class);
+                Intent intent=new Intent(MainActivity.this, audio.class);
                 startActivity(intent);
 
                 return true;
 
             case R.id.camera:
-                Intent intent2=new Intent(MainActivity.this,camera.class);
+                Intent intent2=new Intent(MainActivity.this, camera.class);
                 startActivity(intent2);
                 return true;
 

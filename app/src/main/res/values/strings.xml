@@ -4,13 +4,20 @@
     <string name="s1" />
     <string name="s2" />
     <string name="fragment2">fragment2</string>
-    <string name="timeline">Timeline</string>
+
     <string name="viedo">viedo</string>
-    <string name="ptblictimeline">ptblictimeline</string>
+
     <string name="publictimeline">publictimeline</string>
     <string name="genral">genral</string>
     <string name="hello" />
     <string name="public_timeline">Public Timeline</string>
     <string name="video">video</string>
     <string name="title_activity_successfully_register">Successfully_register</string>
+
+    <string name="setting">Setting</string>
+    <string name="contact">Contact</string>
+
+    <string name="Public">Public</string>
+    <string name="timeline">timeline</string>
+
 </resources>
