@@ -13,9 +13,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dhruvil.spit_it_out.Models.Register;
 import com.example.dhruvil.spit_it_out.R;
+import com.example.dhruvil.spit_it_out.webservices.RetrofitInterface;
+import com.example.dhruvil.spit_it_out.webservices.Retrofitclient;
+import com.google.gson.JsonElement;
 
 import java.util.Random;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class OTP_verification extends AppCompatActivity {
@@ -33,38 +42,9 @@ public class OTP_verification extends AppCompatActivity {
         otp();
         intent();
         sendconfirmation();
-    }
-
-    private void setlistner() {
-
-        mobilenum.setText(phonenum);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                otpinput = editText1.getText().toString() + editText2.getText().toString() + editText3.getText().toString() + editText4.getText().toString();
-                if (otpinput.equals(checkNum)) {
-                    startActivity(new Intent(OTP_verification.this, Successfully_register.class));
-                } else {
-                    Toast.makeText(OTP_verification.this, "Please Enter correct otp", Toast.LENGTH_LONG).show();
-                }
-                Toast.makeText(OTP_verification.this, "Successfully Registered", Toast.LENGTH_LONG).show();
-            }
-
-
-        });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-
-                Intent intent = new Intent(OTP_verification.this, LoginActivity.class);
-                startActivity(intent);
-
-
-            }
-
-        });    }
-
-    private void findview() {
+        registerApi();
+        sendotp();
+    }private void findview() {
 
         button1 = findViewById(R.id.next1);
         editText1 = findViewById(R.id.otp1);
@@ -75,6 +55,65 @@ public class OTP_verification extends AppCompatActivity {
         otpcode = findViewById(R.id.otpcode);
         mobilenum = findViewById(R.id.mobilenum);
     }
+    private void setlistner() {
+
+        mobilenum.setText(phonenum);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                otpinput = editText1.getText().toString() + editText2.getText().toString() + editText3.getText().toString() + editText4.getText().toString();
+                confirmtelstore();
+            }
+        });
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+
+                Intent intent = new Intent(OTP_verification.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+private void  confirmtelstore(){
+
+    Register mobile = new Register();
+    RetrofitInterface retrofitInterface = Retrofitclient.getClient().create(RetrofitInterface.class);
+    Call<ResponseBody> call = retrofitInterface.updateOTPOnServer( phonenum,"1234","android");
+    call.enqueue(new Callback<ResponseBody>() {
+        @Override
+        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            if (otpinput.equals(checkNum)) {
+                startActivity(new Intent(OTP_verification.this, Successfully_register.class));
+                Toast.makeText(OTP_verification.this, "Api is working", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(OTP_verification.this, "Please enter correct otp", Toast.LENGTH_LONG).show();
+            }
+        }
+        @Override
+        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            Toast.makeText(OTP_verification.this, "Api is not working", Toast.LENGTH_LONG).show();
+        }
+    });
+
+}
+private  void registerApi(){
+
+    RetrofitInterface retrofitInterface = Retrofitclient.getClient().create(RetrofitInterface.class);
+    Call<JsonElement> call = retrofitInterface.registeruser("123", phonenum,"android");
+    call.enqueue(new Callback<JsonElement>() {
+        @Override
+        public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
+
+            Toast.makeText(OTP_verification.this, "Response Success", Toast.LENGTH_LONG).show();
+        }
+        @Override
+        public void onFailure(Call<JsonElement> call, Throwable t) {
+            Toast.makeText(OTP_verification.this,"Response failure",Toast.LENGTH_LONG).show();
+        }
+    });
+    }
+
 
     public void otp() {
         editText1.addTextChangedListener(new TextWatcher() {
@@ -145,8 +184,26 @@ public class OTP_verification extends AppCompatActivity {
 
         checkNum = Integer.toString(rand.nextInt((max - min) + 1) + min);
         otpcode.setText(checkNum);
-
+        sendotp();
     }
+private void sendotp(){
+    RetrofitInterface retrofitInterface = Retrofitclient.getClient().create(RetrofitInterface.class);
+    Call<ResponseBody> call = retrofitInterface.gettoken(phonenum,checkNum);
+    call.enqueue(new Callback<ResponseBody>() {
+        @Override
+        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+            Toast.makeText(OTP_verification.this, "otpApi is working", Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+
+        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            Toast.makeText(OTP_verification.this, "otpApi is not working", Toast.LENGTH_LONG).show();
+        }
+    });
+}
 
     public void intent() {
         Bundle bundle = getIntent().getExtras();

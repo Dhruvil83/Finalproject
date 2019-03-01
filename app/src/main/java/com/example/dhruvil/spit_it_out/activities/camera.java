@@ -1,7 +1,8 @@
 package com.example.dhruvil.spit_it_out.activities;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +12,14 @@ import android.widget.ImageView;
 
 import com.example.dhruvil.spit_it_out.R;
 
+import java.io.File;
+
 public class camera extends AppCompatActivity {
     ImageButton imageButton;
     ImageView imageView;
     final int REQUEST_IMAGE_CAPTURE = 2;
+    String folder_main = "Spit_It";
+    Uri urisaveimage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +36,19 @@ public class camera extends AppCompatActivity {
 
     }    private void dispatchTakePictureIntent() {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
+        File f = new File(Environment.getExternalStorageDirectory(), folder_main);
+        File images = new File(Environment.getExternalStorageDirectory() + "/" + folder_main, "Images");
+        File image=new File(images,System.currentTimeMillis()+"images.png");
+        urisaveimage=Uri.fromFile(image);
+        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,urisaveimage);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                startActivity(takePictureIntent);
             }
 
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
             if (requestCode ==REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-                Bundle extras = data.getExtras();
-                Bitmap imageBitmap = (Bitmap) extras.get("data");
-                imageView.setImageBitmap(imageBitmap);
+
+                imageView.setImageURI(urisaveimage);
             }
         }
     }
